@@ -1,0 +1,28 @@
+.captcha-container {
+    text-align: center;
+}
+
+#puzzle-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 5px;
+}
+
+.block {
+    width: 100px;
+    height: 100px;
+    background-size: 300px 300px;
+    cursor: pointer;
+}
+
+.empty {
+    background-image: none;
+    background-color: transparent;
+    cursor: default;
+}
+
+#reset-button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}

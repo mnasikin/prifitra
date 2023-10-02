@@ -1,0 +1,12 @@
+{
+    "user1": {
+        "username": "prifitra",
+        "password": "$2a$12$lJhbL0mYTKouS.9UkayE3OqkqI8FnteYoOyLxqVrrD91P4O8L/2Yu",
+        "avatar": ".inc/main/avatar.jpg"
+    },
+    "user2": {
+        "username": "prifitra",
+        "password": "$2y$10$5l6VjiU2ssoomHkS27e8R.kbkfG9uQzbr18GnuHbcj2tUcxL1Iz7e"  ,
+        "avatar": ".inc/main/avatar.jpg"
+    }
+}
