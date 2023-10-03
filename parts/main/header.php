@@ -2,14 +2,26 @@
 <html lang="en">
 
 <head>
+    <?php
+		include('./inc/main/lib/vars/global.php');
+		include('./config.php');
+		
+		
+		if (!defined('BASE_URL')) {
+			$protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https://" : "http://";
+			$host = $_SERVER['HTTP_HOST'];
+			$path = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/');
+			define('BASE_URL', $protocol . $host . $path);
+		}
+	?>
     <meta charset="utf-8">
-    <title>PRIFITRA</title>
+    <title><?php echo BASE_NAME; ?> <?php echo BASE_VER; ?> - <?php echo BASE_TAG; ?></title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
-    <meta content="" name="description">
+    <meta content="" name="<?php echo BASE_TAG; ?>">
 
     <!-- Favicon -->
-    <link href="./inc/main/img/favicon.ico" rel="icon">
+    <link href="<?php echo BASE_ICON; ?>" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,14 +33,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="./inc/main/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="./inc/main/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link href="<?php echo BASE_URL; ?>./inc/main/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="<?php echo BASE_URL; ?>./inc/main/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="./inc/main/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo BASE_URL; ?>./inc/main/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="./inc/main/css/style.css" rel="stylesheet">
+    <link href="<?php echo BASE_URL; ?>./inc/main/css/style.css" rel="stylesheet">
 
     <!-- Redirect to login if does not have session -->
         <?php

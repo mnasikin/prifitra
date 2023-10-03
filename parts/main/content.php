@@ -9,7 +9,7 @@
                 <!-- Main form -->
                 
                 <div class="col-sm-12 col-md-8 col-xl-8">
-                    Welcome to <a href="">PRIFITRA</a>, Please use <a href="help"> Help Page</a> to get started.
+                    Welcome to <a href=""><?php echo BASE_NAME; ?></a>, Please use <a href="help"> Help Page</a> to get started.
                     <hr>
                     <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
                     <select class="form-select form-select mb-3" aria-label=".form-select-sm example" id="protocol" name="protocol">
