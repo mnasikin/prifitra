@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else {
         echo "<script type='text/javascript'>";
-        echo "document.getElementById('notice').innerHTML = 'Login failed. Username or Password does not match or does not exist.';";
+        echo "document.getElementById('notice').innerHTML = 'Login failed. Username and Password does not match or does not exist.';";
         echo "</script>";    }
 }
 
