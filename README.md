@@ -49,7 +49,7 @@ There's no difference at all...
 2. Chage the username as you wish
 3. For the password, you can use [Bcrypt Generator](https://bcrypt-generator.com/) to encrypt and validate your password.
 
-#### Thanks to
+## Thanks to
 - [Colorlib](https://colorlib.com/wp/template/login-form-v4/) for Awesome login page design
 - [htmlCodex](https://htmlcodex.com/bootstrap-5-admin-template/) for Awesome dashboard design
 
