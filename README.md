@@ -15,9 +15,14 @@ Here is quick start to doploy this script into your server
 Please change the `/inc/login/login.json` file permission to `0600` or `0400`
 ## Server Requirements
 
+- PHP 7.4 or later
 - cURL Enabled
 - PHP JSON Extension Enabled
-- PHP 7.4 or later
+
+#### Tested On
+- cPanel
+- Cyberpanel
+
 ## FAQ
 
 #### Why this script not using SQL?
@@ -44,7 +49,9 @@ There's no difference at all...
 2. Chage the username as you wish
 3. For the password, you can use [Bcrypt Generator](https://bcrypt-generator.com/) to encrypt and validate your password.
 
-
+#### Thanks to
+- [Colorlib](https://colorlib.com/wp/template/login-form-v4/) for Awesome login page design
+- [htmlCodex](https://htmlcodex.com/bootstrap-5-admin-template/) for Awesome dashboard design
 
 
 ## License
