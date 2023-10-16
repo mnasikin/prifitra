@@ -5,6 +5,8 @@
     <?php
 		include('./inc/main/lib/vars/global.php');
 		include('./config.php');
+        $extFile = "./inc/main/data/ext.json";
+        $extData = json_decode(file_get_contents($extFile), true);
 		
 		
 		if (!defined('BASE_URL')) {

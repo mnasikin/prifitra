@@ -4,6 +4,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $destinationFolder = $_POST["destination_folder"];
     $fileName = $_POST["file_name"];
     $fileExtension = $_POST["file_extension"];
+    $extFile = "./inc/main/data/ext.json";
+    $extData = json_decode(file_get_contents($extFile), true);
     
     // Detect protocol from file
     $protocol = (strpos($fileURL, "https://") === 0) ? "https" : "http";
@@ -17,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (
         (filter_var($fileURL, FILTER_VALIDATE_URL) && in_array($protocol, ["http", "https"])) &&
         !empty($fileName) &&
-        in_array($fileExtension, ["zip", "jpg", "png", "webp", "rar", "tar.gz", "jpeg", "daf", "mp4", "sql"])
+        in_array($fileExtension, $extData['extensions'])
     ) {
         // Current installation dir (if you use dirname(__FILE__), your file will be saved at parts/main/<your folder>)
         // $currentDirectory = dirname(__FILE__);

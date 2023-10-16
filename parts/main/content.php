@@ -34,16 +34,12 @@
                     </div>
                     <select class="form-select form-select mb-3" aria-label=".form-select-sm example" id="file_extension" name="file_extension">
                         <option selected>Select File Extension</option>
-                        <option value="zip">ZIP</option>
-                        <option value="jpg">JPG</option>
-                        <option value="webp">WEBP</option>
-                        <option value="png">PNG</option>
-                        <option value="rar">RAR</option>
-                        <option value="tar.gz">TAR.GZ</option>
-                        <option value="sql">SQL</option>
-                        <option value="jpeg">JPEG</option>
-                        <option value="daf">DAF</option>
-                        <option value="mp4">MP4</option>
+
+                        <?php
+                        foreach ($extData['extensions'] as $extension) {
+                            echo '<option value="' . $extension . '">' . strtoupper($extension) . '</option>';
+                        }
+                        ?>
                     </select>
                     <?php require_once "parts/main/download.php"; ?><br>
                     <button type="submit" class="btn btn-dark m-2">Download and Save File</button>
