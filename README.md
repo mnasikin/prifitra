@@ -22,6 +22,7 @@ Please change the `/inc/login/login.json` file permission to `0600` or `0400`
 #### Tested On
 - cPanel
 - Cyberpanel
+- HestiaCP
 
 ## FAQ
 
