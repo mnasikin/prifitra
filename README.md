@@ -11,8 +11,7 @@ Here is quick start to doploy this script into your server
 2. Unzip the file
 3. You're ready to go.
 
-#### Note
-Please change the `/inc/login/login.json` file permission to `0600` or `0400`
+
 ## Server Requirements
 
 - PHP 7.4 or later
