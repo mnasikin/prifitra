@@ -1,37 +1,44 @@
+# 🚀 PRIFITRA
 
-# PRIFITRA
+**PRIFITRA** is a super simple tool to migrate or transfer files from an old server to a new one—without the hassle. Lightweight, fast, and designed for rapid deployment.
 
-a super simple Tools to migrate or transfer your files from old to new server
+---
 
-## Deployment
+## 📦 Deployment
 
-Here is quick start to doploy this script into your server
+Getting started is a breeze:
 
-1. Download or clone this repository and upload to your new server
-2. Unzip the file
-3. You're ready to go.
+1. **Download or clone** this repository to your new server.
+2. **Unzip** the archive.
+3. You're **ready to go**—no extra setup required.
 
+---
 
-## Server Requirements
+## 🔧 Server Requirements
 
-- PHP 7.4 or later
-- cURL Enabled
-- PHP JSON Extension Enabled
+To run PRIFITRA smoothly, your server should support:
 
-#### Tested On
+- PHP 7.4 or higher
+- cURL extension enabled
+- JSON extension enabled
+
+### ✅ Tested On
+
 - cPanel
-- Cyberpanel
+- CyberPanel
 - HestiaCP
 
-## FAQ
+---
 
-#### Why this script not using SQL?
+## ❓ Frequently Asked Questions
 
-Well, to be honest this script was made only to quickly transfer your files. If you need to setup database just to transfer or migrate 1 file, that would be troublesome.
+### Why doesn’t PRIFITRA use SQL?
 
-#### What is the Default Password?
+This tool focuses solely on quick file transfer. Introducing a database just to move files would complicate a process that should be fast and simple.
 
-You can login to PRIFITRA on your server using these login info:
+### What are the default login credentials?
+
+You can access PRIFITRA using:
 
  Username: `prifitra`
  Password: `password`
@@ -41,20 +48,28 @@ or
  username: `guest`
  Password: `password`
 
- #### Whats is the difference between user 1 and user 2?
-There's no difference at all...
 
-#### How to change default username and password?
-1. Open and edit this file: `/inc/login/login.json`
-2. Chage the username as you wish
-3. For the password, you can use [Bcrypt Generator](https://bcrypt-generator.com/) to encrypt and validate your password.
+### What’s the difference between the two users?
 
-## Thanks to
-- [Colorlib](https://colorlib.com/wp/template/login-form-v4/) for Awesome login page design
-- [htmlCodex](https://htmlcodex.com/bootstrap-5-admin-template/) for Awesome dashboard design
+Absolutely none—they share the same permissions.
 
+### How do I change the default username and password?
 
-## License
+1. Open the file: `/inc/login/login.json`
+2. Modify the username field.
+3. Generate a bcrypt-hashed password using [bcrypt-generator.com](https://bcrypt-generator.com/) and replace the default hash.
 
-[MIT](https://choosealicense.com/licenses/mit/)
+---
 
+## 🙌 Thanks To
+
+Special shoutout to the amazing creators of these front-end templates:
+
+- [Colorlib](https://colorlib.com/wp/template/login-form-v4/) — for the login page design
+- [htmlCodex](https://htmlcodex.com/bootstrap-5-admin-template/) — for the dashboard design
+
+---
+
+## 📄 License
+
+This project is licensed under the [MIT License](https://choosealicense.com/licenses/mit/).
