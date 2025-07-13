@@ -12,9 +12,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Set default folder to /download if destination form empty
     if (empty($destinationFolder)) {
-        $destinationFolder = "../download";
+        $destinationFolder = dirname(dirname(__DIR__)) . '/download'; // absolute path
+        $relativeFolder = 'download'; // for URL
+    } else {
+        $relativeFolder = trim($destinationFolder, '/');
+        $destinationFolder = dirname(dirname(__DIR__)) . '/' . $relativeFolder;
     }
-
     // Data validation
     if (
         (filter_var($fileURL, FILTER_VALIDATE_URL) && in_array($protocol, ["http", "https"])) &&
@@ -22,14 +25,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         in_array($fileExtension, $extData['extensions'])
     ) {
         // Current installation dir (if you use dirname(__FILE__), your file will be saved at parts/main/<your folder>)
-        // $currentDirectory = dirname(__FILE__);
-        $currentDirectory = "./";
+        $currentDirectory = dirname(dirname(__DIR__));
 
         // Generate URL with protocol
         $fullFileURL = $fileURL;
 
         // Generate path to directory
-        $fullDestinationFolder = $currentDirectory . '/' . $destinationFolder;
+        $fullDestinationFolder = rtrim($destinationFolder, '/');
 
         // Generate folder (if submitted folder does not exist)
         if (!is_dir($fullDestinationFolder)) {
@@ -45,8 +47,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Save file to destination folder
         $filePath = $fullDestinationFolder . "/" . $fullFileName;
 
+        // if (file_put_contents($filePath, $fileContent) !== false) {
+        //     echo "File successfully downloaded and saved at: " . $filePath;
+        // } else {
+        //     echo "Failed to save File.";
+        // }
         if (file_put_contents($filePath, $fileContent) !== false) {
-            echo "File successfully downloaded and saved at: " . $filePath;
+            // Build public URL
+            $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? "https" : "http";
+            $host = $_SERVER['HTTP_HOST'];
+            $publicURL = $protocol . "://" . $host . "/" . $relativeFolder . "/" . $fullFileName;
+
+            echo "File successfully downloaded and saved at: $filePath";
         } else {
             echo "Failed to save File.";
         }
