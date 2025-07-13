@@ -39,7 +39,6 @@
 
     <!-- Template Stylesheet -->
     <link href="<?php echo BASE_URL; ?>/inc/main/css/style.css" rel="stylesheet">
-
     <!-- Redirect to login if does not have session -->
         <?php
         session_start();

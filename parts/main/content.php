@@ -11,10 +11,10 @@
                 <div class="col-sm-12 col-md-8 col-xl-8">
                     Welcome to <a href=""><?php echo BASE_NAME; ?></a>, Please use <a href="help"> Help Page</a> to get started.
                     <hr>
-                    <form method="post" action="<?php echo $_SERVER["PHP_SELF"]; ?>">
+                    <form id="downloadForm">
                     <select class="form-select form-select mb-3" aria-label=".form-select-sm example" id="protocol" name="protocol">
-                        <option selected>Select protocol</option>
-                        <option value="https">HTTPS</option>
+                        <option>Select protocol</option>
+                        <option selected value="https">HTTPS</option>
                         <option value="http">HTTP</option>
                     </select>
                     <div class="input-group mb-3">
@@ -41,7 +41,14 @@
                         }
                         ?>
                     </select>
-                    <?php require_once "parts/main/download.php"; ?><br>
+                    <!-- ajax -->
+                    <div id="progressContainer" style="margin-top:10px;">
+                      <progress id="progressBar" value="0" max="100" style="width:300px;"></progress>
+                      <div id="progressText"></div>
+                    </div>
+
+                    <div id="result"></div>
+                    <!-- end ajax -->
                     <button type="submit" class="btn btn-dark m-2">Download and Save File</button>
                     </form>
                 </div>

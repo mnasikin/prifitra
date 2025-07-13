@@ -96,6 +96,62 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Max Execution Time -->
+                    <div class="d-flex align-items-center border-bottom py-2">
+                        <input class="form-check-input m-0" type="checkbox" <?php echo $executionOK ? 'checked' : ''; ?>>
+                        <div class="w-100 ms-3">
+                            <div class="d-flex w-100 align-items-center justify-content-between">
+                                <span>
+                                    <?php echo $executionOK
+                                        ? "Max Execution Time is sufficient: <strong>{$maxExecutionTime} seconds</strong>"
+                                        : "<del>Max Execution Time is too low ({$maxExecutionTime}s). Recommended: 1800s</del>"; ?>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Max Input Time -->
+                    <div class="d-flex align-items-center border-bottom py-2">
+                        <input class="form-check-input m-0" type="checkbox" <?php echo $inputTimeOK ? 'checked' : ''; ?>>
+                        <div class="w-100 ms-3">
+                            <div class="d-flex w-100 align-items-center justify-content-between">
+                                <span>
+                                    <?php echo $inputTimeOK
+                                        ? "Max Input Time is sufficient: <strong>{$maxInputTime} seconds</strong>"
+                                        : "<del>Max Input Time is too low ({$maxInputTime}s). Recommended: 1800s</del>"; ?>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Memory Limit -->
+                    <div class="d-flex align-items-center border-bottom py-2">
+                        <input class="form-check-input m-0" type="checkbox" <?php echo $memoryOK ? 'checked' : ''; ?>>
+                        <div class="w-100 ms-3">
+                            <div class="d-flex w-100 align-items-center justify-content-between">
+                                <span>
+                                    <?php echo $memoryOK
+                                        ? "Memory Limit is sufficient: <strong>{$memoryLimit}</strong>"
+                                        : "<del>Memory Limit is too low ({$memoryLimit}). Recommended: 512M</del>"; ?>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Max Input Vars -->
+                    <div class="d-flex align-items-center border-bottom py-2">
+                        <input class="form-check-input m-0" type="checkbox" <?php echo $inputVarsOK ? 'checked' : ''; ?>>
+                        <div class="w-100 ms-3">
+                            <div class="d-flex w-100 align-items-center justify-content-between">
+                                <span>
+                                    <?php echo $inputVarsOK
+                                        ? "Max Input Vars is sufficient: <strong>{$maxInputVars}</strong>"
+                                        : "<del>Max Input Vars is too low ({$maxInputVars}). Recommended: 10000</del>"; ?>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
 
                 </div>
             </div>

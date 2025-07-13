@@ -7,3 +7,9 @@ RewriteRule ^([^\.]+)/?$ $1.php [L]
     Order allow,deny
     Deny from all
 </FilesMatch>
+
+php_value max_execution_time 1800
+php_value max_input_time 1800
+php_value memory_limit 512M
+php_value max_input_vars 10000
+

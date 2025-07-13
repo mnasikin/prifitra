@@ -26,7 +26,11 @@
     <script src="<?php echo BASE_URL; ?>/inc/main/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
     <!-- Template Javascript -->
+    <script>
+      const ajaxEndpoint = "<?php echo rtrim(dirname($_SERVER['SCRIPT_NAME']), '/') . '/parts/main/download.php'; ?>";
+    </script>
     <script src="<?php echo BASE_URL; ?>/inc/main/js/main.js"></script>
+    <script src="<?php echo BASE_URL; ?>/inc/main/js/ajax.js"></script>
 </body>
 
 </html>

@@ -19,8 +19,8 @@
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="<?php echo BASE_ICON; ?>"/>
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>/inc/login/fonts/iconic/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>inc/login/fonts/iconic/css/material-design-iconic-font.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>/inc/login/css/extra.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>/inc/login/css/styles.css">
+
+	<link rel="stylesheet" type="text/css" href="<?php echo BASE_URL; ?>inc/login/css/main.css">
 </head>
