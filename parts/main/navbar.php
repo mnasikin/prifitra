@@ -28,7 +28,7 @@
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="dashboard" class="nav-item nav-link <?php echo ($_SERVER['REQUEST_URI'] == '/prifitra/dashboard') ? 'active' : ''; ?>"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    
+                    <a href="db-migrate" class="nav-item nav-link <?php echo ($_SERVER['REQUEST_URI'] == '/prifitra/db-migrate') ? 'active' : ''; ?>"><i class="fa fa-tachometer-alt me-2"></i>DB Migrate</a>
                     <a href="help" class="nav-item nav-link <?php echo ($_SERVER['REQUEST_URI'] == '/prifitra/help') ? 'active' : ''; ?>"><i class="fas fa-question me-2"></i>Help</a>
                     <a href="https://github.com/mnasikin" class="nav-item nav-link" target="_blank"><i class="fab fa-github me-2"></i>Github</a>
                     <a href="logout" class="nav-item nav-link"><i class="fas fa-sign-out-alt me-2"></i>logout</a>

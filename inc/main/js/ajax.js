@@ -58,3 +58,52 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+
+// DB Migrate
+document.addEventListener("DOMContentLoaded", function() {
+    const form = document.getElementById('migrateForm');
+    const progressBar = document.getElementById('progressBar');
+    const progressText = document.getElementById('progressText');
+    const resultDiv = document.getElementById('result');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        resultDiv.innerHTML = '';
+        progressBar.value = 0;
+        progressText.textContent = 'Starting...';
+
+        const formData = new FormData(form);
+
+        fetch(`${PRIFITRA_URL}/parts/db/migrate-handler.php`, {
+            method: 'POST',
+            body: formData
+        }).then(response => response.json())
+          .then(data => {
+              if (data.success) {
+                  progressBar.value = 100;
+                  progressText.textContent = 'Migration completed!';
+                  resultDiv.innerHTML = '<div class="alert alert-success">'+data.message+'</div>';
+              } else {
+                  progressText.textContent = 'Error';
+                  resultDiv.innerHTML = '<div class="alert alert-danger">'+data.message+'</div>';
+              }
+          }).catch(err => {
+              progressText.textContent = 'Failed';
+              resultDiv.innerHTML = '<div class="alert alert-danger">Request failed.</div>';
+          });
+
+        pollProgress();
+    });
+
+    function pollProgress() {
+        fetch(`${PRIFITRA_URL}/parts/db/migrate-handler.php?progress=1`)
+        .then(res => res.json())
+        .then(data => {
+            if (data.percent !== undefined) {
+                progressBar.value = data.percent;
+                progressText.textContent = data.text;
+                if (data.percent < 100) setTimeout(pollProgress, 1000);
+            }
+        }).catch(() => {});
+    }
+});

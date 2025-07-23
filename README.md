@@ -1,6 +1,6 @@
 # 🚀 PRIFITRA
 
-**PRIFITRA** is a super simple tool to migrate or transfer files from an old server to a new one—without the hassle. Lightweight, fast, and designed for rapid deployment.
+**PRIFITRA** is a super simple tool to migrate or transfer files and databases from an old server to a new one—without the hassle. Lightweight, fast, and designed for rapid deployment.
 
 ---
 
@@ -19,8 +19,9 @@ Getting started is a breeze:
 To run PRIFITRA smoothly, your server should support:
 
 - PHP 7.4 or higher
-- cURL extension enabled
-- JSON extension enabled
+- `cURL` extension enabled
+- `JSON` extension enabled
+- `shell_exec` (optional to migrate database faster)
 
 ### ✅ Tested On
 
